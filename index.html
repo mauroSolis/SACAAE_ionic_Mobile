@@ -1,0 +1,328 @@
+<html ng-app="ionicApp">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    
+    <title>Tabs Example</title>
+
+    <link href="http://code.ionicframework.com/1.0.0-beta.1/css/ionic.min.css" rel="stylesheet">
+  <script src="http://code.ionicframework.com/1.0.0-beta.1/js/ionic.bundle.min.js"></script>
+    
+  <script src="js/app.js"></script>
+    
+  <script src="cordova.js"></script>  
+  </head>
+
+  <body>      
+    
+    <ion-nav-bar class="nav-title-slide-ios7 bar-positive">
+      <ion-nav-back-button class="button-icon ion-arrow-left-c">
+      </ion-nav-back-button>
+    </ion-nav-bar>
+             
+    <ion-nav-view animation="slide-left-right"></ion-nav-view>
+
+
+    <script id="templates/tabs.html" type="text/ng-template">
+      <ion-tabs class="tabs-icon-top tabs-positive">
+
+        <ion-tab title="Inicio" icon="ion-home" href="#/tab/home">
+          <ion-nav-view name="home-tab"></ion-nav-view>
+        </ion-tab>
+
+        <ion-tab title="Acerca" icon="ion-ios7-information" href="#/tab/about">
+          <ion-nav-view name="about-tab"></ion-nav-view>
+        </ion-tab>
+
+        <ion-tab title="Contacto" icon="ion-ios7-world" ui-sref="tabs.contact">
+          <ion-nav-view name="contact-tab"></ion-nav-view>
+        </ion-tab>
+
+      </ion-tabs>
+    </script>
+
+    <script id="templates/home.html" type="text/ng-template">
+      <ion-view title="SACA-AE|Consultas">
+        <ion-content class="padding">
+          <p>Bienvenidos a la aplicaci&oacute;n m&oacute;vil SACA-AE, seleccione la consulta 
+          que desea realizar.</p>
+          <p>
+            <a class="button icon icon-right ion-chevron-right" href="#/tab/proyectos">Proyectos</a>
+          </p>
+          <p>
+            <a class="button icon icon-right ion-chevron-right" href="#/tab/comisiones">Comisiones</a>
+          </p>
+          <p>
+            <a class="button icon icon-right ion-chevron-right" href="#/tab/oferta">Oferta acad&eacute;mica</a>
+          </p>
+        </ion-content>
+      </ion-view>
+    </script>
+
+    <script id="templates/facts.html" type="text/ng-template">
+      <ion-view title="Facts">
+        <ion-content class="padding">
+          <p>Banging your head against a wall uses 150 calories an hour.</p>
+          <p>Dogs have four toes on their hind feet, and five on their front feet.</p>
+          <p>The ant can lift 50 times its own weight, can pull 30 times its own weight and always falls over on its right side when intoxicated.</p>
+          <p>A cockroach will live nine days without it's head, before it starves to death.</p>
+          <p>Polar bears are left handed.</p>
+          <p>
+            <a class="button icon ion-home" href="#/tab/home"> Home</a>
+            <a class="button icon icon-right ion-chevron-right" href="#/tab/facts2">More Facts</a>
+          </p>
+        </ion-content>
+      </ion-view>
+    </script>
+      
+    <script id="templates/proyectos.html" type="text/ng-template">
+      <ion-view title="Proyectos">
+        <ion-content class="padding">
+          <p>Seleccione la comisi&oacute;n que desee ver.</p>
+          <a class="button button-light icon icon-right ion-chevron-right" href="#/tab/detalle_proy">Proyecto 0</a>
+          <p> 
+             <h4>Proyecto 1 {cambiar por un list}</h4>
+          </p>
+          <hr />
+          <p>
+            <h4>Proyecto 2 {cambiar por un list}</h4>
+          </p>
+          <hr />
+          <p>
+            <a class="button icon ion-home" href="#/tab/home"> Home</a>
+            <a class="button icon icon-right ion-chevron-right" href="#/tab/facts2">More Facts</a>
+          </p>
+        </ion-content>
+      </ion-view>
+    </script>
+      
+    <script id="templates/detalles_proyecto.html" type="text/ng-template">
+      <ion-view title="Detalles del Proyecto">
+        <ion-content class="padding">
+          <div class="list card">
+
+              <div class="item item-avatar">
+              
+                <h2>Marty McFly</h2>
+                <p>November 05, 1955</p>
+              </div>
+
+              <div class="item item-body">
+                
+                <p>
+                  This is a "Facebook" styled Card. The header is created from a Thumbnail List item,
+                  the content is from a card-body consisting of an image and paragraph text. The footer
+                  consists of tabs, icons aligned left, within the card-footer.
+                </p>
+                <p>
+                  <a href="#" class="subdued">1 Like</a>
+                  <a href="#" class="subdued">5 Comments</a>
+                </p>
+              </div>
+
+              <div class="item tabs tabs-secondary tabs-icon-left">
+                <a class="tab-item" href="#">
+                  <i class="icon ion-thumbsup"></i>
+                  Like
+                </a>
+                <a class="tab-item" href="#">
+                  <i class="icon ion-chatbox"></i>
+                  Comment
+                </a>
+                <a class="tab-item" href="#">
+                  <i class="icon ion-share"></i>
+                  Share
+                </a>
+              </div>
+
+            </div>
+        </ion-content>
+      </ion-view>
+    </script>
+      
+    <script id="templates/comisiones.html" type="text/ng-template">
+      <ion-view title="Proyectos">
+        <ion-content class="padding">
+          <p>Seleccione la comisi&oacute;n que desee ver.</p>
+           <a class="button button-light icon icon-right ion-chevron-right" href="#/tab/detalle_com">Comision 0</a>
+          <p> 
+             <h4>Comision 1 {cambiar por un list}</h4>
+          </p>
+          <hr />
+          <p>
+            <h4>Comision 2 {cambiar por un list}</h4>
+          </p>
+          <hr />
+          <p>
+            <a class="button icon ion-home" href="#/tab/home"> Home</a>
+            <a class="button icon icon-right ion-chevron-right" href="#/tab/facts2">More Facts</a>
+          </p>
+        </ion-content>
+      </ion-view>
+    </script>
+      
+    <script id="templates/detalles_comision.html" type="text/ng-template">
+      <ion-view title="Detalles de Comisiones">
+        <ion-content class="padding">
+          <div class="list card">
+
+              <div class="item item-avatar">
+              
+                <h2>Marty McFly</h2>
+                <p>November 05, 1955</p>
+              </div>
+
+              <div class="item item-body">
+                
+                <p>
+                  This is a "Facebook" styled Card. The header is created from a Thumbnail List item,
+                  the content is from a card-body consisting of an image and paragraph text. The footer
+                  consists of tabs, icons aligned left, within the card-footer.
+                </p>
+                <p>
+                  <a href="#" class="subdued">1 Like</a>
+                  <a href="#" class="subdued">5 Comments</a>
+                </p>
+              </div>
+
+              <div class="item tabs tabs-secondary tabs-icon-left">
+                <a class="tab-item" href="#">
+                  <i class="icon ion-thumbsup"></i>
+                  Like
+                </a>
+                <a class="tab-item" href="#">
+                  <i class="icon ion-chatbox"></i>
+                  Comment
+                </a>
+                <a class="tab-item" href="#">
+                  <i class="icon ion-share"></i>
+                  Share
+                </a>
+              </div>
+
+            </div>
+        </ion-content>
+      </ion-view>
+    </script>  
+      
+    <script id="templates/oferta.html" type="text/ng-template">
+      <ion-view title="Oferta Acad&eacute;mica">
+        <ion-content class="padding">
+          <p>Seleccione la oferta acad&eacute;mica que desee ver.</p>
+          <a class="button button-light icon icon-right ion-chevron-right" href="#/tab/detalle_oferta">Oferta 0</a>
+          <p> 
+             <h4>Oferta 1 {cambiar por un list}</h4>
+          </p>
+          <hr />
+          <p>
+            <h4>Oferta 2 {cambiar por un list}</h4>
+          </p>
+          <hr />
+          <p>
+            <a class="button icon ion-home" href="#/tab/home"> Home</a>
+            <a class="button icon icon-right ion-chevron-right" href="#/tab/facts2">More Facts</a>
+          </p>
+        </ion-content>
+      </ion-view>
+    </script>
+      
+    <script id="templates/detalles_oferta.html" type="text/ng-template">
+      <ion-view title="Detalles Oferta Acad&eacute;mica">
+        <ion-content class="padding">
+          <div class="list card">
+
+              <div class="item item-avatar">
+              
+                <h2>Marty McFly</h2>
+                <p>November 05, 1955</p>
+              </div>
+
+              <div class="item item-body">
+                
+                <p>
+                  This is a "Facebook" styled Card. The header is created from a Thumbnail List item,
+                  the content is from a card-body consisting of an image and paragraph text. The footer
+                  consists of tabs, icons aligned left, within the card-footer.
+                </p>
+                <p>
+                  <a href="#" class="subdued">1 Like</a>
+                  <a href="#" class="subdued">5 Comments</a>
+                </p>
+              </div>
+
+              <div class="item tabs tabs-secondary tabs-icon-left">
+                <a class="tab-item" href="#">
+                  <i class="icon ion-thumbsup"></i>
+                  Like
+                </a>
+                <a class="tab-item" href="#">
+                  <i class="icon ion-chatbox"></i>
+                  Comment
+                </a>
+                <a class="tab-item" href="#">
+                  <i class="icon ion-share"></i>
+                  Share
+                </a>
+              </div>
+
+            </div>
+        </ion-content>
+      </ion-view>
+    </script>
+
+    <script id="templates/facts2.html" type="text/ng-template">
+      <ion-view title="Also Factual">
+        <ion-content class="padding">
+          <p>111,111,111 x 111,111,111 = 12,345,678,987,654,321</p>
+          <p>1 in every 4 Americans has appeared on T.V.</p>
+          <p>11% of the world is left-handed.</p>
+          <p>1 in 8 Americans has worked at a McDonalds restaurant.</p>
+          <p>$283,200 is the absolute highest amount of money you can win on Jeopardy.</p>
+          <p>101 Dalmatians, Peter Pan, Lady and the Tramp, and Mulan are the only Disney cartoons where both parents are present and don't die throughout the movie.</p>
+          <p>
+            <a class="button icon ion-home" href="#/tab/home"> Home</a>
+            <a class="button icon ion-chevron-left" href="#/tab/facts"> Scientific Facts</a>
+          </p>
+        </ion-content>
+      </ion-view>
+    </script>
+
+    <script id="templates/about.html" type="text/ng-template">
+      <ion-view title="Acerca">
+        <ion-content class="padding">
+          <h3>Sistema Administrativo de Carga Academica (SACA-AE)</h3>
+          <p>Este sistema m&oacute;vil fue desarrollado para el uso interno de la escuela de Administraci&oacute;n
+          de Empresas del Instituto Tecnol&oacute;gico de Costa Rica.</p>
+          <p>Built with Sass and optimized for AngularJS.</p>
+          <p>
+            <a class="button icon icon-right ion-chevron-right" href="#/tab/navstack">Tabs Nav Stack</a>
+          </p>
+        </ion-content>
+      </ion-view>
+    </script>
+
+    <script id="templates/nav-stack.html" type="text/ng-template">
+      <ion-view title="Tab Nav Stack">
+        <ion-content class="padding">
+          <p><img src="http://ionicframework.com/img/diagrams/tabs-nav-stack.png" style="width:100%"></p>
+        </ion-content>
+      </ion-view>
+    </script>
+
+    <script id="templates/contact.html" type="text/ng-template">
+      <ion-view title="Contact">
+        <ion-content>
+          <div class="list">
+            <div class="item">
+              @IonicFramework
+            </div>
+            <div class="item">
+              @DriftyTeam
+            </div>
+          </div>
+        </ion-content>
+      </ion-view>
+    </script>
+
+  </body>
+</html>
