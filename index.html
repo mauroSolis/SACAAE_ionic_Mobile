@@ -47,13 +47,13 @@
           <p>Bienvenidos a la aplicaci&oacute;n m&oacute;vil SACA-AE, seleccione la consulta 
           que desea realizar.</p>
           <p>
-            <a class="button icon icon-right ion-chevron-right" href="#/tab/proyectos">Proyectos</a>
+            <a class="button button-full icon icon-right ion-chevron-right" href="#/tab/proyectos">Proyectos</a>
           </p>
           <p>
-            <a class="button icon icon-right ion-chevron-right" href="#/tab/comisiones">Comisiones</a>
+            <a class="button button-full icon icon-right ion-chevron-right" href="#/tab/comisiones">Comisiones</a>
           </p>
           <p>
-            <a class="button icon icon-right ion-chevron-right" href="#/tab/oferta">Oferta acad&eacute;mica</a>
+            <a class="button button-full icon icon-right ion-chevron-right" href="#/tab/oferta">Oferta acad&eacute;mica</a>
           </p>
         </ion-content>
       </ion-view>
@@ -76,24 +76,18 @@
     </script>
       
     <script id="templates/proyectos.html" type="text/ng-template">
-      <ion-view title="Proyectos">
-        <ion-content class="padding">
-          <p>Seleccione la comisi&oacute;n que desee ver.</p>
-          <a class="button button-light icon icon-right ion-chevron-right" href="#/tab/detalle_proy">Proyecto 0</a>
-          <p> 
-             <h4>Proyecto 1 {cambiar por un list}</h4>
-          </p>
-          <hr />
-          <p>
-            <h4>Proyecto 2 {cambiar por un list}</h4>
-          </p>
-          <hr />
-          <p>
-            <a class="button icon ion-home" href="#/tab/home"> Home</a>
-            <a class="button icon icon-right ion-chevron-right" href="#/tab/facts2">More Facts</a>
-          </p>
-        </ion-content>
-      </ion-view>
+      <ion-list show-delete="data.showDelete" show-reorder="data.showReorder">
+
+        <ion-item ng-repeat="item in items" 
+                  item="item"
+                  href="#/item/{{item.id}}">
+          Proyecto {{ item.id }}
+          
+          
+          <ion-reorder-button class="ion-navicon" on-reorder="moveItem(item, $fromIndex, $toIndex)"></ion-reorder-button>
+        </ion-item>
+
+      </ion-list>
     </script>
       
     <script id="templates/detalles_proyecto.html" type="text/ng-template">
@@ -141,24 +135,18 @@
     </script>
       
     <script id="templates/comisiones.html" type="text/ng-template">
-      <ion-view title="Proyectos">
-        <ion-content class="padding">
-          <p>Seleccione la comisi&oacute;n que desee ver.</p>
-           <a class="button button-light icon icon-right ion-chevron-right" href="#/tab/detalle_com">Comision 0</a>
-          <p> 
-             <h4>Comision 1 {cambiar por un list}</h4>
-          </p>
-          <hr />
-          <p>
-            <h4>Comision 2 {cambiar por un list}</h4>
-          </p>
-          <hr />
-          <p>
-            <a class="button icon ion-home" href="#/tab/home"> Home</a>
-            <a class="button icon icon-right ion-chevron-right" href="#/tab/facts2">More Facts</a>
-          </p>
-        </ion-content>
-      </ion-view>
+      <ion-list show-delete="data.showDelete" show-reorder="data.showReorder">
+
+        <ion-item ng-repeat="item in items" 
+                  item="item"
+                  href="#/tab/detalle_com">
+          Proyecto {{ item.id }}
+          
+          
+          <ion-reorder-button class="ion-navicon" on-reorder="moveItem(item, $fromIndex, $toIndex)"></ion-reorder-button>
+        </ion-item>
+
+      </ion-list>
     </script>
       
     <script id="templates/detalles_comision.html" type="text/ng-template">
@@ -206,24 +194,18 @@
     </script>  
       
     <script id="templates/oferta.html" type="text/ng-template">
-      <ion-view title="Oferta Acad&eacute;mica">
-        <ion-content class="padding">
-          <p>Seleccione la oferta acad&eacute;mica que desee ver.</p>
-          <a class="button button-light icon icon-right ion-chevron-right" href="#/tab/detalle_oferta">Oferta 0</a>
-          <p> 
-             <h4>Oferta 1 {cambiar por un list}</h4>
-          </p>
-          <hr />
-          <p>
-            <h4>Oferta 2 {cambiar por un list}</h4>
-          </p>
-          <hr />
-          <p>
-            <a class="button icon ion-home" href="#/tab/home"> Home</a>
-            <a class="button icon icon-right ion-chevron-right" href="#/tab/facts2">More Facts</a>
-          </p>
-        </ion-content>
-      </ion-view>
+      <ion-list show-delete="data.showDelete" show-reorder="data.showReorder">
+
+        <ion-item ng-repeat="item in items" 
+                  item="item"
+                  href="#/item/{{item.id}}">
+          Proyecto {{ item.id }}
+          
+          
+          <ion-reorder-button class="ion-navicon" on-reorder="moveItem(item, $fromIndex, $toIndex)"></ion-reorder-button>
+        </ion-item>
+
+      </ion-list>
     </script>
       
     <script id="templates/detalles_oferta.html" type="text/ng-template">
